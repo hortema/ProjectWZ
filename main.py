@@ -35,7 +35,16 @@ while True:
     for event in pg.event.get():
         if event.type == pg.locals.QUIT:
             QUIT = True
-
+        if event.type == pg.KEYDOWN:
+            if event.key == pg.K_RIGHT:
+                bgx -= 50
+            if event.key == pg.K_LEFT:
+                bgx += 50
+            if event.key == pg.K_DOWN:
+                bgy -= 50
+            if event.key == pg.K_UP:
+                bgy += 50
+ 
     screen.blit(bg, (bgx,bgy))
     pg.display.flip()
     clock.tick(30)
