@@ -16,6 +16,9 @@ path.append(my_path)
 screenx = 800
 screeny = 600
 
+# preset colours
+black = (0,0,0)
+
 # start pygame, open a screen with preset size.
 pg.init()
 screen = pg.display.set_mode((screenx,screeny)) #set your window size, (x,y)
@@ -45,6 +48,7 @@ while True:
             if event.key == pg.K_UP:
                 bgy += 50
  
+    screen.fill(black)
     screen.blit(bg, (bgx,bgy))
     pg.display.flip()
     clock.tick(30)
