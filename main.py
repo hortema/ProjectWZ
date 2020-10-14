@@ -30,5 +30,16 @@ bgx = 0
 bgy = 0
 
 while True:
+    QUIT = False
+
+    for event in pg.event.get():
+        if event.type == pg.locals.QUIT:
+            QUIT = True
+
     screen.blit(bg, (bgx,bgy))
     pg.display.flip()
+    clock.tick(30)
+    
+    if QUIT == True:
+        pg.quit()
+        break
